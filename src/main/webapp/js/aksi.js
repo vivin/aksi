@@ -151,14 +151,14 @@ function init() {
                     if(!data.error) {
                         var result = "The digit you entered was recognized as a <b>" + data.first + "</b> with a confidence of <b>" + data.firstConfidence + "</b><br /><br />";
 
-                      //  result += "The second and third choices were: <br />" +
-                        //          "<ul><li><b>" + data.second + "</b> with a confidence of <b>" + data.secondConfidence + "</b></li>" +
-                          //            "<li><b>" + data.third + "</b> with a confidence of <b>" + data.thirdConfidence + "</b></ul>"
+                        result += "The second and third choices were: <br />" +
+                                  "<ul><li><b>" + data.second + "</b> with a confidence of <b>" + data.secondConfidence + "</b></li>" +
+                                  "<li><b>" + data.third + "</b> with a confidence of <b>" + data.thirdConfidence + "</b></ul>"
 
                         jQuery("#result").html(result).fadeIn("slow");
                         setTimeout(function() {
                             jQuery("#result").fadeOut("slow");
-                        }, 3000);
+                        }, 5000);
                     }
 
                     else {

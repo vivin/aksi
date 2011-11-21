@@ -147,7 +147,7 @@
 
               <br />
 
-              <div id="result" class="alert-message block-message success" style="width: 400px; margin-right:auto; margin-left:auto; display:none">
+              <div id="result" class="alert-message block-message success" style="width: 500px; margin-right:auto; margin-left:auto; display:none; text-align:justify;">
                   <p><strong>Well done!</strong> You successfully read this alert message. Cum sociis natoque penatibus
                       et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum.</p>
               </div>

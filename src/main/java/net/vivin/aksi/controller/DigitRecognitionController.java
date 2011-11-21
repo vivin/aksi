@@ -36,9 +36,9 @@ public class DigitRecognitionController {
 
             double[] output = neuralNetwork.getOutput();
 
-            double first = -1;
-            double second = -1;
-            double third = -1;
+            double first = 0;
+            double second = 0;
+            double third = 0;
 
             double firstConfidence = output[0];
             double secondConfidence = output[0];
@@ -53,6 +53,19 @@ public class DigitRecognitionController {
                     third = second;
                     second = first;
                     first = j;
+                }
+
+                else if(output[j] > secondConfidence) {
+                    thirdConfidence = secondConfidence;
+                    secondConfidence = output[j];
+
+                    third = second;
+                    second = j;
+                }
+
+                else if(output[j] > thirdConfidence) {
+                    thirdConfidence = output[j];
+                    third = j;
                 }
             }
 
