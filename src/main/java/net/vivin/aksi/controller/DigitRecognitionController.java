@@ -35,17 +35,37 @@ public class DigitRecognitionController {
             neuralNetwork.setInputs(inputs);
 
             double[] output = neuralNetwork.getOutput();
-            double max = output[0];
-            double recognizedDigit = 0;
+
+            double first = -1;
+            double second = -1;
+            double third = -1;
+
+            double firstConfidence = output[0];
+            double secondConfidence = output[0];
+            double thirdConfidence = output[0];
+
             for(int j = 0; j < output.length; j++) {
-                if(output[j] > max) {
-                    max = output[j];
-                    recognizedDigit = j;
+                if(output[j] > firstConfidence) {
+                    thirdConfidence = secondConfidence;
+                    secondConfidence = firstConfidence;
+                    firstConfidence = output[j];
+
+                    third = second;
+                    second = first;
+                    first = j;
                 }
             }
 
-            model.addAttribute("digit", recognizedDigit);
-            model.addAttribute("confidence", max);
+            model.addAttribute("error", false);
+
+            model.addAttribute("first", first);
+            model.addAttribute("firstConfidence", firstConfidence);
+
+            model.addAttribute("second", second);
+            model.addAttribute("secondConfidence", secondConfidence);
+
+            model.addAttribute("third", third);
+            model.addAttribute("thirdConfidence", thirdConfidence);
         }
 
         catch(IOException e) {

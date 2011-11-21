@@ -67,6 +67,7 @@ function init() {
     });
 
     jQuery("#recognize").click(function() {
+
         var canvas = jQuery("#digitView").get(0);
         var context = canvas.getContext('2d');
 
@@ -97,6 +98,8 @@ function init() {
         var imageWidth = maxCol - minCol;
 
         if (imageHeight > 0 && imageWidth > 0) {
+
+            jQuery("#spinner").show();
 
             var actualImageData = context.getImageData(minCol, minRow, imageWidth, imageHeight);
 
@@ -142,12 +145,43 @@ function init() {
                 },
                 dataType: "json",
                 success: function(data) {
-                    console.log(data);
+
+                    jQuery("#spinner").hide();
+
+                    if(!data.error) {
+                        var result = "The digit you entered was recognized as a <b>" + data.first + "</b> with a confidence of <b>" + data.firstConfidence + "</b><br /><br />";
+
+                      //  result += "The second and third choices were: <br />" +
+                        //          "<ul><li><b>" + data.second + "</b> with a confidence of <b>" + data.secondConfidence + "</b></li>" +
+                          //            "<li><b>" + data.third + "</b> with a confidence of <b>" + data.thirdConfidence + "</b></ul>"
+
+                        jQuery("#result").html(result).fadeIn("slow");
+                        setTimeout(function() {
+                            jQuery("#result").fadeOut("slow");
+                        }, 3000);
+                    }
+
+                    else {
+                        jQuery("#error").html(data.message);
+                    }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    alert("Server responded with an error: " + errorThrown);
+
+                    jQuery("#spinner").hide();
+
+                    jQuery("#error").html("Server responded with an error: <b>" + errorThrown + "</b>").fadeIn("slow");
+                    setTimeout(function() {
+                        jQuery("#error").fadeOut("slow");
+                    }, 3000);
                 }
             });
+        }
+
+        else {
+            jQuery("#error").html("You need to write something!").fadeIn("slow");
+            setTimeout(function() {
+                jQuery("#error").fadeOut("slow");
+            }, 3000)
         }
     });
 
@@ -182,7 +216,6 @@ function init() {
             str += "\n";
         }
 
-        console.log(str);
         return padded;
     }
 

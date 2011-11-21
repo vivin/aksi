@@ -141,7 +141,20 @@
                      href="http://www.konqueror.org">Konqueror</a>.</p>
               </canvas>
 
-              <br /><br />
+              <br />
+
+              <img id="spinner" src = "/images/spinner.gif" style = "display:none;" />
+
+              <br />
+
+              <div id="result" class="alert-message block-message success" style="width: 400px; margin-right:auto; margin-left:auto; display:none">
+                  <p><strong>Well done!</strong> You successfully read this alert message. Cum sociis natoque penatibus
+                      et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum.</p>
+              </div>
+
+              <div id="error" class="alert-message error" style="width: 400px; margin-right:auto; margin-left:auto; display:none">
+                   <p><strong>Holy guacamole!</strong> Best check yo self, you’re not looking too good.</p>
+              </div>
 
               <input id="recognize" type="button" value="Recognize Digit" class="btn primary" />&nbsp;&nbsp;&nbsp;&nbsp;<input id="clear" type="button" class="btn" value="Clear" />
           </div>
