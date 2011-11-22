@@ -216,8 +216,6 @@ function init() {
             str += "\n";
         }
 
-        console.log(str);
-
         return padded;
     }
 
