@@ -81,9 +81,9 @@
         <div class="container">
           <a class="brand" href="#">Akṣi</a>
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="http://vivin.net">Home</a></li>
+            <li><a href="http://vivin.net/about-me/">About</a></li>
+            <li><a href="http://vivin.net/contact/">Contact</a></li>
           </ul>
         </div>
       </div>
