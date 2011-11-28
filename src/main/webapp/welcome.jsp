@@ -130,6 +130,15 @@
           </div>
       </div>
       <div class="row" style="padding-bottom: 20px">
+          <div class="span14" style="text-align: justify">
+            <h2>I CAN HAZ SOURCE?</h2>
+            The source is available on github. I have two repositories. The <a href="https://github.com/vivin/DigitRecognizingNeuralNetwork">first one</a> contains the neural-network framework which includes all
+            the classes needed to create and train a neural network. The <a href="https://github.com/vivin/aksi">second repository</a> contains the code for this specific project (i.e., the website that you're
+            currently looking at). The framework that creates the neural-network is extremely simple and not very comprehensive. In the future, I plan to write a series of articles/tutorials on my website that
+            will describe how I created this neural network.
+          </div>
+      </div>
+      <div class="row" style="padding-bottom: 20px">
           <div class="span14" style="text-align: center">
               <canvas id="digitView" width="80" height="80" style="border:1px solid #000000; background-color:#eeeeee; cursor: crosshair">
                   <p>Unfortunately, your browser is currently unsupported by our web
