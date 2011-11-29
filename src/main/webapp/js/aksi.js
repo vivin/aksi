@@ -149,11 +149,11 @@ function init() {
                     jQuery("#spinner").hide();
 
                     if(!data.error) {
-                        var result = "The digit you entered was recognized as a <b>" + data.first + "</b> with a confidence of <b>" + data.firstConfidence + "</b><br /><br />";
+                        var result = "The digit you entered was recognized as a <b>" + data.first + "</b> with an output of <b>" + data.firstConfidence + "</b><br /><br />";
 
                         result += "The second and third choices were: <br />" +
-                                  "<ul><li><b>" + data.second + "</b> with a confidence of <b>" + data.secondConfidence + "</b></li>" +
-                                  "<li><b>" + data.third + "</b> with a confidence of <b>" + data.thirdConfidence + "</b></ul>"
+                                  "<ul><li><b>" + data.second + "</b> with an output of <b>" + data.secondConfidence + "</b></li>" +
+                                  "<li><b>" + data.third + "</b> with an output of <b>" + data.thirdConfidence + "</b></ul>"
 
                         jQuery("#result").html(result).fadeIn("slow");
                         setTimeout(function() {

@@ -24,7 +24,7 @@ public class DigitRecognitionController {
     public void recognize(Model model, String imageData) {
 
         try {
-            ObjectInputStream in = new ObjectInputStream(new ClassPathResource("DigitRecognizingNeuralNetwork-1321941610135.net").getInputStream());
+            ObjectInputStream in = new ObjectInputStream(new ClassPathResource("DigitRecognizingNeuralNetwork-1322103892079.net").getInputStream());
             NeuralNetwork neuralNetwork = (NeuralNetwork) in.readObject();
 
             double[] inputs = new double[imageData.length()];
